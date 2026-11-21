@@ -78,14 +78,16 @@ Article content:
 Follow the specified length category and preserve the source's factual accuracy. Return only the finished narration."""
 
 
-def summarize_article(title: str, article_text: str, *, language: str, length: str) -> str:
+def summarize_article(
+    title: str, article_text: str, *, language: str, length: str, model_name: str
+) -> str:
     from pydantic_ai import Agent
     from pydantic_ai.models.ollama import OllamaModel
     from pydantic_ai.models.openai import OpenAIChatModelSettings
     from pydantic_ai.providers.ollama import OllamaProvider
 
     model = OllamaModel(
-        "qwen3.5:4b", provider=OllamaProvider(base_url="http://localhost:11434/v1")
+        model_name, provider=OllamaProvider(base_url="http://localhost:11434/v1")
     )
     agent = Agent(
         model,

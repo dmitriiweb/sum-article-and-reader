@@ -42,6 +42,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         help="Narration language; auto uses the article's language metadata",
     )
     parser.add_argument("--voice", choices=VOICES, default="Ryan", help="Qwen TTS voice")
+    parser.add_argument("--model", default="qwen3.5:4b", help="Ollama model for summarization")
     args = parser.parse_args(argv)
 
     try:
@@ -72,7 +73,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
 
     try:
-        narration = summarize_article(title, article_text, language=language, length=args.length)
+        narration = summarize_article(
+            title, article_text, language=language, length=args.length, model_name=args.model
+        )
     except Exception as exc:
         print(f"Summarization failed: {exc}", file=sys.stderr)
         return 1

@@ -42,8 +42,11 @@ You can also use `uv run --locked sum-article-and-reader` with the same argument
 | `--language` | `auto` | `zh`, `en`, `ja`, `ko`, `de`, `fr`, `ru`, `pt`, `es`, `it`, `auto` |
 | `--length` | `short` | `short`, `medium`, `long` |
 | `--voice` | `Ryan` | `Vivian`, `Serena`, `Uncle_Fu`, `Dylan`, `Eric`, `Ryan`, `Aiden`, `Ono_Anna`, `Sohee` |
+| `--model` | `qwen3.5:4b` | Ollama chat model name for summarization |
 
 Options are case-sensitive. By default, the CLI uses the page's language metadata. If the metadata is missing or specifies an unsupported language, use an explicit language code. Length choices guide the model; they do not enforce a word count.
+
+To use a different summarization model, run `ollama pull <model>` if it is not installed, then pass `--model <model>`. This option does not change the speech model.
 
 ## Output
 
