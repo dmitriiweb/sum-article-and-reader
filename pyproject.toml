@@ -1,0 +1,24 @@
+[project]
+name = "sum-article-and-reader"
+version = "0.1.0"
+description = "Summarize online articles with Ollama and read them aloud with Qwen TTS"
+readme = "README.md"
+authors = [
+    { name = "Dmitrii K", email = "dmitriik@proton.me" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "newspaper4k>=0.9.6.1",
+    "pydantic-ai-slim[openai]>=2.71.0,<3",
+    "qwen-tts==0.1.1",
+    "soundfile>=0.14.0",
+    "torch==2.10.0",
+    "torchaudio==2.10.0",
+]
+
+[project.scripts]
+sum-article-and-reader = "sum_article_and_reader.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
