@@ -14,7 +14,7 @@ Under `src/sum_article_and_reader/`:
 
 ## CLI contract
 
-Give the CLI an absolute HTTP or HTTPS article URL. The defaults are `--language ru`, `--length short`, and `--voice Ryan`. Choices are case-sensitive.
+Give the CLI an absolute HTTP or HTTPS article URL. The defaults are `--language auto`, `--length short`, and `--voice Ryan`. Choices are case-sensitive.
 
 - Language: `zh`, `en`, `ja`, `ko`, `de`, `fr`, `ru`, `pt`, `es`, `it`, or `auto`. `auto` uses only newspaper4k's detected page language metadata. If the metadata is absent or not supported, give an explicit language code.
 - Length: `short`, `medium`, or `long`. Word counts are guidelines, not limits.

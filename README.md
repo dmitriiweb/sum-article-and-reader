@@ -39,11 +39,11 @@ You can also use `uv run --locked sum-article-and-reader` with the same argument
 
 | Option | Default | Choices |
 | --- | --- | --- |
-| `--language` | `ru` | `zh`, `en`, `ja`, `ko`, `de`, `fr`, `ru`, `pt`, `es`, `it`, `auto` |
+| `--language` | `auto` | `zh`, `en`, `ja`, `ko`, `de`, `fr`, `ru`, `pt`, `es`, `it`, `auto` |
 | `--length` | `short` | `short`, `medium`, `long` |
 | `--voice` | `Ryan` | `Vivian`, `Serena`, `Uncle_Fu`, `Dylan`, `Eric`, `Ryan`, `Aiden`, `Ono_Anna`, `Sohee` |
 
-Options are case-sensitive. `--language auto` uses the page's language metadata. If the metadata is missing or specifies an unsupported language, use an explicit language code. Length choices guide the model; they do not enforce a word count.
+Options are case-sensitive. By default, the CLI uses the page's language metadata. If the metadata is missing or specifies an unsupported language, use an explicit language code. Length choices guide the model; they do not enforce a word count.
 
 ## Output
 

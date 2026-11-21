@@ -38,7 +38,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "--language",
         choices=(*LANGUAGES, "auto"),
-        default="ru",
+        default="auto",
         help="Narration language; auto uses the article's language metadata",
     )
     parser.add_argument("--voice", choices=VOICES, default="Ryan", help="Qwen TTS voice")
